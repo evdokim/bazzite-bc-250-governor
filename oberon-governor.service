@@ -1,0 +1,12 @@
+[Unit]
+Description=Oberon GPU governor
+
+[Service]
+ExecStart=%h/.local/bin/oberon-governor
+# Service is sometimes started before amdgpu finishes loading, allow leeway for these cases
+RestartSec=5
+Restart=on-failure
+WorkingDirectory=%h/.local/bin
+
+[Install]
+WantedBy=default.target
