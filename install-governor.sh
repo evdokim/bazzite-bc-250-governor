@@ -11,7 +11,7 @@ distrobox create --name fedora --image fedora --yes
 distrobox enter fedora -- sudo dnf install libdrm-devel cmake make git g++ -y
 distrobox enter fedora -- cmake .
 distrobox enter fedora -- make
-distrobox stop fedora --yes
+distrobox rm fedora --yes
 
 mkdir -p $HOME/.local/bin
 cp oberon-governor $HOME/.local/bin/
